@@ -1,0 +1,40 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #78c0e0;
+
+}
+
+header{
+    background-color: #1d9645;
+  }
+  
+
+
+
+  .form-signin {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    margin: auto;
+  }
+
+#password{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+  #formulario {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.4s ease-in-out !important;
+  }
+  
+  #formulario:hover{
+    box-shadow:  10px 10px 25px rgba(0, 0, 0, 0.5) !important;
+    
+  }
+

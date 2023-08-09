@@ -1,0 +1,22 @@
+#reseñas input {
+    display: none;
+  }
+
+  #reseñas label {
+    font-size: 25px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+
+  #reseñas input:not(:checked),
+  #reseñas input:not(:checked)~label:hover~label {
+    color: green;
+  }
+
+  #reseñas input:checked~label {
+    color: green;
+
+  }
+
+
+  
