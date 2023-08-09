@@ -41,12 +41,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
         }
       } else {
-        echo "<script>alert('No se logro cargar el Archivo')</script>";
+
+        echo "<script>alert('No se logro cargar el Archivo $img_name')</script>";
       }
     } else {
       echo "<script>alert('Valores Invalidos')</script>";
 
     }
+
   }
 }
 
@@ -63,6 +65,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   <link rel="stylesheet" href="../../css/remixicon.css" />
   <link rel="stylesheet" href="../../css/adminPaquete.css" />
   <link rel="icon" href="../../imagenes/LogoIco.ico" />
+  <script src="../../js/jquery.js"></script>
+
+
 </head>
 
 <body class="bg-secondary">
@@ -127,8 +132,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label fs-5">Ingrese una Imagen</label>
 
-          <input class="form-control" type="file" id="img" name="img" />
-
+          <!-- <input class="form-control" type="file" id="img" name="img" /> -->
+          <div>
+            <label for="img-input" class="border text-center rounded p-2 form-control" id="drop-area">
+              <input type="file" id="img-input" name="img" hidden />
+              <div id="img-view">
+                <i class="ri-upload-cloud-line fs-1"></i>
+                <p id="texto">Sube la Imagen</p>
+              </div>
+            </label>
+          </div>
         </div>
 
         <div class="mb-3">
@@ -142,6 +155,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
   </section>
   <script src="../../js/bootstrap5.bundle.js"></script>
+  <script src="../../js/crearLugar.js"></script>
 </body>
 
 </html>

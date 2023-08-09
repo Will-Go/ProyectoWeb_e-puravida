@@ -16,28 +16,9 @@ include("db.php");
   <!-- <link href="../css//bootstrap.rtl.min.css" rel="stylesheet" /> -->
   <link href="../css//bootstrap5.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/remixicon.css" />
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
+  <link rel="stylesheet" href="../css/paquetes.css">
+  <script src="../js/jquery.js"></script>
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    img {
-      object-fit: contain;
-      max-width: 100%;
-      max-height: 100%;
-
-    }
-  </style>
 </head>
 
 <body>
@@ -56,7 +37,7 @@ include("db.php");
       </div>
     </section>
 
-    <div class="album py-5 bg-light">
+    <div id="galeria" class="album py-5 bg-light">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -84,15 +65,15 @@ include("db.php");
                 <div class="col">
                   <div class="card shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                      role="img" aria-label="Placeholder: صورة مصغرة" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      role="img" focusable="false">
                       <title>
                         <?= $paquete['nombre'] ?>
                       </title>
                       <rect width="100%" height="100%" />
-                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      <text x="50%" y="50%" fill="#eceeef">
                         <?= $nombreLugar ?>
                       </text>
-                      <image opacity="45%" xlink:href="../imagenes/<?= $img ?>"></image>
+                      <image opacity="45%" width="100%" xlink:href="../imagenes/<?= $img ?>"></image>
                     </svg>
 
                     <div class="card-body">
@@ -124,6 +105,7 @@ include("db.php");
   </main>
   <?php include("footer.html"); ?>
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/paquetes.js"></script>
 </body>
 
 </html>

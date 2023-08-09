@@ -8,20 +8,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   exit();
 } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['boton'])) {
   $id = $_POST['boton'];
-  echo ($id);
+  // echo ($id);
   $query = "DELETE FROM lugar WHERE id_lugar = '$id'";
-  $query2 = "SELECT * FROM paquete";
+  $query2 = "SELECT * FROM paquete WHERE id_lugar = '$id'";
   $paquetes = mysqli_query($con, $query2);
-  $rowsPaquetes = mysqli_fetch_all($paquetes, MYSQLI_ASSOC);
+  // $rowsPaquetes = mysqli_fetch_all($paquetes, MYSQLI_ASSOC);
 
-  $existe = true;
-  foreach ($rowsPaquetes as $element) {
-    if ($element['id_lugar'] == $id) {
-      $img = false;
-      break;
-    }
-  }
-  if ($existe) {
+
+  if (mysqli_num_rows($paquetes) > 0) {
     echo "<script>alert('Este lugar esta asociado a un paquete!!'); window.location.href='eliminarLugar.php';</script>";
 
   } else {

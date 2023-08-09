@@ -22,10 +22,20 @@ if (isset($con)) {
   $b = $numeros[1];
   $c = $numeros[2];
   $query2 = "SELECT * FROM paquete WHERE id_paquete IN ('$a','$b','$c')";
+  $result1 = mysqli_query($con, $query2);
   $result = mysqli_query($con, $query2);
 
-}
+  //DAR LAS TRES IMAGENES
+  $Imagenes = array();
+  while ($paquete1 = mysqli_fetch_assoc($result1)) {
+    $id_lugar1 = $paquete1['id_lugar'];
+    $query1 = "SELECT img, nombre FROM lugar WHERE id_lugar = '$id_lugar1'";
+    $result3 = mysqli_fetch_assoc(mysqli_query($con, $query1));
+    $Imagenes[] = $result3['img'];
+  }
 
+
+}
 ?>
 
 
@@ -41,9 +51,11 @@ if (isset($con)) {
 
   <link rel="stylesheet" href="../css/bootstrap5.min.css" />
 
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/index.css" />
   <!-- Buscar Iconos en la Pagina "https://remixicon.com/" -->
   <link rel="stylesheet" href="../css/remixicon.css" />
+  <script src="../js/jquery.js"></script>
+
 </head>
 
 <body>
@@ -135,15 +147,18 @@ if (isset($con)) {
         aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
+      <!-- PONER LAS imagenes -->
+
       <div class="carousel-item active">
-        <img src="../imagenes/Chirripo, Costa Rica.png" class="d-block w-100 img-fluid" alt="Chirripo" />
+        <img src="../imagenes/<?= $Imagenes[0] ?>" class="w-100" />
       </div>
       <div class="carousel-item">
-        <img src="../imagenes/iglesia.jpg" class="d-block w-100 img-fluid" alt="iglesia" />
+        <img src="../imagenes/<?= $Imagenes[1] ?>" class="w-100" />
       </div>
       <div class="carousel-item">
-        <img src="../imagenes/playa.jpg" class="d-block w-100 img-fluid" alt="playa" />
+        <img src="../imagenes/<?= $Imagenes[2] ?>" class="w-100" />
       </div>
+      <!-- PONER LAS imagenes -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev">
@@ -266,8 +281,7 @@ if (isset($con)) {
   </footer>
 
   <script src="../js/bootstrap5.bundle.js"></script>
-
-
+  <script src="../js/index.js"></script>
 </body>
 
 </html>

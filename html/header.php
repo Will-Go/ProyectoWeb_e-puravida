@@ -17,7 +17,7 @@ include("userSession.php");
   <!-- Bootstrap core CSS -->
   <link href="../css//bootstrap5.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/remixicon.css" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <!-- <link rel="stylesheet" href="../css/main.css" /> -->
 
 
 
