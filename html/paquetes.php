@@ -87,7 +87,7 @@ include("db.php");
                           Reservar
                         </a>
 
-                        <small class="text-muted"> :
+                        <small id="precio" class="text-muted"> :
                           $
                           <?= $paquete['precio'] ?>
                         </small>
@@ -105,7 +105,7 @@ include("db.php");
   </main>
   <?php include("footer.html"); ?>
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/paquetes.js"></script>
+  <script src="../js/paquetes1.js"></script>
 </body>
 
 </html>

@@ -18,7 +18,8 @@ try {
         $query = "insert into cliente values ('$email','$cedula', '$user_name', '$tel', '$pass')";
 
         mysqli_query($con, $query);
-        echo "<script>alert('Registro fue Exitoso!') </script>";
+        echo "<script>alert('Registro Exitoso ')</script> <script>window.location.href = 'sigin.php';</script>";
+
       } else {
         header("Location: sigin.php?error=Contraseñas no son iguales!");
       }

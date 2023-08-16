@@ -55,7 +55,14 @@ if (isset($con)) {
   <!-- Buscar Iconos en la Pagina "https://remixicon.com/" -->
   <link rel="stylesheet" href="../css/remixicon.css" />
   <script src="../js/jquery.js"></script>
-
+  <style>
+    video {
+      width: 100% !important;
+      max-height: 36rem !important;
+      object-fit: cover;
+      position: relative;
+    }
+  </style>
 </head>
 
 <body>
@@ -105,9 +112,9 @@ if (isset($con)) {
           <?php
           if (isset($cliente)) { ?>
             <li class="nav-item dropdown">
-              <button class="ri-account-circle-fill fs-1 mx-4 btn dropdown-toggle" role="button" id="dropdownMenuLink"
-                data-bs-toggle="dropdown" aria-expanded="false"></button>
-              <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuLink">
+              <a class="ri-account-circle-fill fs-1 me-4 btn dropdown-toggle" role="button" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-expanded="false"></a>
+              <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuLink" style="position: absolute">
                 <li>
                   <div class="p-2">
                     <p class="text-wrap text-break">
@@ -121,7 +128,6 @@ if (isset($con)) {
               </ul>
               <?php
           } else {
-
             ?>
             <li class="nav-item">
               <a class="btn btn-success p-1 me-1" href="../html/sigin.php">Crear Cuenta</a>
@@ -145,6 +151,8 @@ if (isset($con)) {
         aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
       <!-- PONER LAS imagenes -->
@@ -157,6 +165,11 @@ if (isset($con)) {
       </div>
       <div class="carousel-item">
         <img src="../imagenes/<?= $Imagenes[2] ?>" class="w-100" />
+      </div>
+      <div class="carousel-item">
+        <video controls="false" muted="true">
+          <source src="../imagenes/video.mp4" type="video/mp4">
+        </video>
       </div>
       <!-- PONER LAS imagenes -->
     </div>
@@ -281,7 +294,7 @@ if (isset($con)) {
   </footer>
 
   <script src="../js/bootstrap5.bundle.js"></script>
-  <script src="../js/index.js"></script>
+  <script src="../js/index1.js"></script>
 </body>
 
 </html>

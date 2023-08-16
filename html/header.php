@@ -49,12 +49,12 @@ include("userSession.php");
         <?php
         if (isset($cliente)) { ?>
           <li class="nav-item dropdown">
-            <button class="ri-account-circle-fill fs-1 mx-4 btn dropdown-toggle" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false"></button>
-            <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuLink">
+            <a class="ri-account-circle-fill fs-1 me-4 btn dropdown-toggle" role="button" id="dropdownMenuLink"
+              data-bs-toggle="dropdown" aria-expanded="false"></a>
+            <ul class="dropdown-menu w-50" aria-labelledby="dropdownMenuLink" style="position: absolute">
               <li>
                 <div class="p-2">
-                  <p class="text-wrap text-break">
+                  <p class="text-break">
                     <?= $cliente['nombre'] ?>
                   </p>
 

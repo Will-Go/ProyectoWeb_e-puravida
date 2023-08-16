@@ -33,11 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pagar'])) {
 
             $userCorreo = $cliente['correo'];
             $query1 = "SELECT num_tarjeta FROM metodo_pago WHERE num_tarjeta = '$numTarjeta'";
+            $query2 = "INSERT INTO metodo_pago VALUES ('$numTarjeta', '$metodo', '$fechaExp', '$cvc','$userCorreo')";
             $result = mysqli_query($con, $query1);
-            if (mysqli_num_rows($result) == 0) {
-                $query1 = "INSERT INTO metodo_pago VALUES ('$numTarjeta', '$metodo', '$fechaExp', '$cvc','$userCorreo')";
-                $result = mysqli_query($con, $query1);
+            echo (mysqli_num_rows($result));
+            echo ($numTarjeta);
+            //Chequea si esta tarjeta ya existe en la base de datos o no, si ya existe pues omite esta linea
+            if (mysqli_num_rows($result) <= 0) {
+                $result2 = mysqli_query($con, $query2);
             }
+
 
 
             if ($result) {

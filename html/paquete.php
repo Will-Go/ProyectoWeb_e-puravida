@@ -83,7 +83,7 @@ if (isset($_GET['id'])) {
         <div class="row g-5">
 
           <!-- FACTURA -->
-          <div class="col-md-4 col-lg-5 order-md-last sticky-top">
+          <div class="col-md-4 col-lg-5 order-md-last sticky-top h-100">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
             </h4>
             <ul class="list-group mb-3">
