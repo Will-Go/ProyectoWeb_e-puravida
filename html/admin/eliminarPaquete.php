@@ -10,14 +10,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   $id = $_POST['boton'];
 
   $query = "DELETE FROM paquete WHERE id_paquete = '$id'";
+  try {
 
-  if (mysqli_query($con, $query)) {
-    // Deletion successful
-    echo "<script>alert('Se a eliminado el paquete con el id: $id'); window.location.href='eliminarPaquete.php';</script>";
 
-  } else {
-    // Deletion failed
-    echo "Error: " . mysqli_error($con);
+    if (mysqli_query($con, $query)) {
+
+      echo "<script>alert('Se a eliminado el paquete con el id: $id'); window.location.href='eliminarPaquete.php';</script>";
+
+    } else {
+
+      echo "Error: " . mysqli_error($con);
+    }
+  } catch (mysqli_sql_exception $e) {
+    echo "<script>alert('Este Paquete $id ya tiene usuarios!!'); window.location.href='eliminarPaquete.php';</script>";
   }
 }
 

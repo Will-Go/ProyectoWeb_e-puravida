@@ -155,7 +155,8 @@ if (isset($_GET['id'])) {
                   <div class="row gy-3">
                     <div class="col-md-12">
                       <label for="cc-number" class="form-label">Numero de la Tarjeta</label>
-                      <input type="number" name="numTarjeta" class="form-control" id="cc-number" placeholder="" required />
+                      <input type="text" name="numTarjeta" class="form-control" pattern="\d{16}" required
+                        title="Tienes que digitar un numero de 16 digitos" />
                       <div class="invalid-feedback">
                         Credit card number is required
                       </div>

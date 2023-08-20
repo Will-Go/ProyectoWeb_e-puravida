@@ -166,10 +166,17 @@ if (isset($con)) {
       <div class="carousel-item">
         <img src="../imagenes/<?= $Imagenes[2] ?>" class="w-100" />
       </div>
-      <div class="carousel-item">
-        <video controls="false" muted="true">
-          <source src="../imagenes/video.mp4" type="video/mp4">
-        </video>
+      <div class="carousel-item position-relative" data-bs-interval="60000">
+        <a target="_blank" href="https://www.youtube.com/watch?v=QXt21aGi_nQ&t=6s">
+          <video autoplay loop muted="true">
+            <source src="../imagenes/video.mp4" type="video/mp4">
+          </video>
+          <p
+            class="position-absolute bottom-0 start-0 badge fw-bold fst-italic ms-2 text-light fs-6 bg-secondary text-wrap">
+            Creditos a:
+            "TUCAYA
+            TRAVEL"</p>
+        </a>
       </div>
       <!-- PONER LAS imagenes -->
     </div>

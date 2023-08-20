@@ -17,7 +17,7 @@ include("db.php");
   <link href="../css//bootstrap5.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/remixicon.css" />
   <link rel="stylesheet" href="../css/paquetes.css">
-  <script src="../js/jquery.js"></script>
+
 
 </head>
 
@@ -103,9 +103,11 @@ include("db.php");
       </div>
     </div>
   </main>
-  <?php include("footer.html"); ?>
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/paquetes1.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/paquetes.js"></script>
+  <?php include("footer.html"); ?>
+
 </body>
 
 </html>
