@@ -31,6 +31,7 @@ try {
   }
 } catch (Exception $e) {
   header("Location: sigin.php?error=Valores invalidos!");
+  // echo ($e);
 }
 ?>
 
@@ -102,33 +103,38 @@ try {
           <?php echo $_GET['error']; ?>
         </div>
       <?php } ?>
-      <form method="POST">
+      <form method="POST" action="../html/sigin.php">
         <div class="form-floating my-2">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo" />
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo"
+            required />
           <label for="floatingInput">Correo Electronico</label>
         </div>
 
         <div class="form-floating my-2">
-          <input type="number" class="form-control" id="floatingInput" placeholder="Cedula" name="cedula" />
+          <input type="text" class="form-control" id="floatingInput" placeholder="Cedula" name="cedula" pattern="\d{11}"
+            title="Ingrese su cedula de 11 digitos" required />
           <label for="floatingInput">Cedula</label>
         </div>
 
         <div class="form-floating my-2">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre" />
+          <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre" required />
           <label for="floatingInput">Nombre Completo</label>
         </div>
 
         <div class="form-floating my-2">
-          <input type="number" class="form-control" id="floatingInput" placeholder="Telefono" name="telefono" />
+          <input type="text" class="form-control" id="floatingInput" placeholder="Telefono" name="telefono"
+            pattern="\d{8}" title="Ingrese su telefono de 8 digitos" required />
           <label for="floatingInput">Telefono</label>
         </div>
 
         <div id="password" class="form-floating my-2">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena" />
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena"
+            required />
           <label for="floatingPassword">Contraseña </label>
         </div>
         <div id="OtraPassword" class="form-floating my-2">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena2" />
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena2"
+            required />
           <label for="floatingPassword">Repetir Contraseña </label>
         </div>
         <button class="w-100 btn btn-lg btn-success" type="submit">
