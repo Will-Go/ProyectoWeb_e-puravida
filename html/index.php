@@ -156,17 +156,7 @@ if (isset($con)) {
     </div>
     <div class="carousel-inner">
       <!-- PONER LAS imagenes -->
-
-      <div class="carousel-item active">
-        <img src="../imagenes/<?= $Imagenes[0] ?>" class="w-100" />
-      </div>
-      <div class="carousel-item">
-        <img src="../imagenes/<?= $Imagenes[1] ?>" class="w-100" />
-      </div>
-      <div class="carousel-item">
-        <img src="../imagenes/<?= $Imagenes[2] ?>" class="w-100" />
-      </div>
-      <div class="carousel-item position-relative" data-bs-interval="60000">
+      <div class="carousel-item position-relative active" data-bs-interval="60000">
         <a target="_blank" href="https://www.youtube.com/watch?v=QXt21aGi_nQ&t=6s">
           <video autoplay loop muted="true">
             <source src="../imagenes/video.mp4" type="video/mp4">
@@ -178,6 +168,16 @@ if (isset($con)) {
             TRAVEL"</p>
         </a>
       </div>
+      <div class="carousel-item ">
+        <img src="../imagenes/<?= $Imagenes[0] ?>" class="w-100" />
+      </div>
+      <div class="carousel-item">
+        <img src="../imagenes/<?= $Imagenes[1] ?>" class="w-100" />
+      </div>
+      <div class="carousel-item">
+        <img src="../imagenes/<?= $Imagenes[2] ?>" class="w-100" />
+      </div>
+
       <!-- PONER LAS imagenes -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
